@@ -41,6 +41,10 @@ export default function Header() {
           loadSession("index")
         }}
       >
+                    <span class="ml-1 font-extrabold text-slate-7 dark:text-slate">
+              {iconTitle().title}
+            </span>
+        
         <Show
           when={iconTitle().icon}
           fallback={<div class="w-8em h-8em" innerHTML={logo} />}
