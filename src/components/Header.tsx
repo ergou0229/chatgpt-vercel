@@ -41,7 +41,7 @@ export default function Header() {
           loadSession("index")
         }}
       >
-             <header class="px-4 py-2 sticky top-0 z-99 flex justify-between items-center">
+ <header class="px-4 py-2 sticky top-0 z-99 flex justify-between items-center">
         <div
           class="flex items-center text-2xl cursor-pointer"
           onClick={() => {
@@ -59,9 +59,9 @@ export default function Header() {
                   Vercel
                 </span>
 
-                
-                
-                
+              </>
+            }
+          >
             <span class="ml-1 font-extrabold text-slate-7 dark:text-slate">
               {iconTitle().title}
             </span>
@@ -69,15 +69,6 @@ export default function Header() {
         </div>
         <ThemeToggle />
       </header>
-        
-        <Show
-          when={iconTitle().icon}
-          fallback={<div class="w-8em h-8em" innerHTML={logo} />}
-        >
-          <div class="text-7em h-1em mb-8">{iconTitle().icon}</div>
-        </Show>
-      </div>
-     
     </>
   )
 }
