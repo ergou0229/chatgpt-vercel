@@ -41,9 +41,34 @@ export default function Header() {
           loadSession("index")
         }}
       >
-                    <span class="ml-1 font-extrabold text-slate-7 dark:text-slate">
+             <header class="px-4 py-2 sticky top-0 z-99 flex justify-between items-center">
+        <div
+          class="flex items-center text-2xl cursor-pointer"
+          onClick={() => {
+            scrollTo("main", -48)
+          }}
+        >
+          <Show
+            when={iconTitle().title}
+            fallback={
+              <>
+                <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-yellow-300 from-yellow-600 dark:to-red-700 to-red-700 mr-1">
+                  ChatGPT
+                </span>
+                <span class="ml-1 font-extrabold text-slate-7 dark:text-slate">
+                  Vercel
+                </span>
+
+                
+                
+                
+            <span class="ml-1 font-extrabold text-slate-7 dark:text-slate">
               {iconTitle().title}
             </span>
+          </Show>
+        </div>
+        <ThemeToggle />
+      </header>
         
         <Show
           when={iconTitle().icon}
