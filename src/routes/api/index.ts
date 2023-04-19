@@ -69,14 +69,14 @@ export async function POST({ request }: APIEvent) {
       throw new Error("没有输入任何文字。")
     } else {
       const content = messages.at(-1)!.content.trim()
-      if (content.startsWith("查询填写的 Key 的余额")) {
+      if (content.startsWith("查询填写的 Key 的余额 -账号购买:https://ka.aimz.me/buy/9")) {
         if (key !== localKey) {
           const billings = await Promise.all(
             splitKeys(key).map(k => fetchBilling(k))
           )
           return new Response(await genBillingsTable(billings))
         } else {
-          throw new Error("没有填写 OpenAI API key，不会查询内置的 Key。")
+          throw new Error("没有填写 OpenAI API key，不会查询内置的 Key。-账号购买:https://ka.aimz.me/buy/9")
         }
       } else if (content.startsWith("sk-")) {
         const billings = await Promise.all(
@@ -88,7 +88,7 @@ export async function POST({ request }: APIEvent) {
 
     const apiKey = randomKey(splitKeys(key))
 
-    if (!apiKey) throw new Error("没有填写 OpenAI API key，或者 key 填写错误。")
+    if (!apiKey) throw new Error("没有填写 OpenAI API key，或者 key 填写错误。-账号购买:https://ka.aimz.me/buy/9")
 
     const encoder = new TextEncoder()
     const decoder = new TextDecoder()
